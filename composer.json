@@ -1,0 +1,51 @@
+{
+    "name": "tochka-developers/entity-definition",
+    "description": "Make definition of classes and methods",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Babushkin Pavel",
+            "email": "darkdarin@tochka.com"
+        }
+    ],
+    "require": {
+        "php": "8.2.*|8.3.*",
+        "jetbrains/phpstorm-attributes": "^1.0",
+        "psr/container": "^1.0|^2.0",
+        "tochka-developers/docblock-parser": "^1.0",
+        "tochka-developers/types": "^1.0"
+    },
+    "require-dev": {
+        "illuminate/support": "^10.0|^11.0",
+        "laravel/pint": "^1.18",
+        "mockery/mockery": "^1.6",
+        "phpunit/phpunit": "^10.0",
+        "roave/security-advisories": "dev-latest",
+        "vimeo/psalm": "^5.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tochka\\EntityDefinition\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TochkaTest\\EntityDefinition\\": "tests/"
+        }
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Tochka\\EntityDefinition\\ConfigProvider"
+        },
+        "laravel": {
+            "providers": [
+                "Tochka\\EntityDefinition\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "pint": "vendor/bin/pint",
+        "psalm": "vendor/bin/psalm --output-format=phpstorm --no-cache"
+    }
+}
